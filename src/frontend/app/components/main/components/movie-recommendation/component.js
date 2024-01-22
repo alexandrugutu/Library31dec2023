@@ -11,7 +11,7 @@ export function MovieRecommendation({title, genre, quality, translation, stars, 
 }) {
     const movieEl = document.createElement('div');
 
-    movieEl.classList.add(styles.movieRecommendation);
+    movieEl.classList.add('card');
 
     const imgEl = document.createElement('img');
     imgEl.classList.add(styles.poster);

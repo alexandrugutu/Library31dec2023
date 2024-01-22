@@ -1,12 +1,25 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const booksRouter = require('./books');
+const cors = require('cors');
+
+const moviesRouter = require('./movies');
 const PORT = 3000;
 const server = express();
 
+server.use(cors({
+    origin: '*'
+}));
 server.use(bodyParser.urlencoded({ extended: false}));
 server.use(bodyParser.json());
-server.use("/", booksRouter);
+server.use('/', moviesRouter);
+
+
+server.listen (PORT, () => {
+    console.log(`Server started!! App listening at http://localhost:${PORT}/`)
+});
+
+
+
 
 // server.use((req, res, next) => {
 //     console.log(req.body); //Object.create(null) 
@@ -16,8 +29,3 @@ server.use("/", booksRouter);
 // server.get('/', (req, res) => {
 //     res.send('it works!');
 // });
-
-
-server.listen (PORT, () => {
-    console.log(`Server started!! App listening at http://localhost:${PORT}/`)
-});
