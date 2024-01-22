@@ -1,0 +1,50 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "Movie App",
+  "main": "webpack.config.js",
+  "author": "AlexG",
+  "repository": {
+    "url": "https://github.com"
+  },
+  "license": "ISC",
+  "scripts": {
+    "start:prod:bacbeend": "node ./dist/backend/index.js",
+    "start:dev:be": "nodemon ./src/backend/index",
+    "start:prod:fe": "http-server ./dist",
+    "start:dev:fe": "webpack serve",
+    "start:dev": "concurrently \"yarn start:dev:fe\" \"yarn start:dev:be\" ",
+    "start:prod": "yarn build:prod && concurrently \"yarn start:prod:fe\" \"yarn start:prod:be\" ",
+    "remove:dist": "rimraf ./dist",
+    "copy:backend": "copyfiles -u 1 ./src/backend/**/*.* ./dist",
+    "build:prod": "yarn remove:dist && yarn build:fe && yarn build:be",
+    "build:fe": "webpack",
+    "build:be": "yarn copy:backend"
+  },
+  "dependencies": {
+    "body-parser": "1.20.2",
+    "cors": "2.8.5",
+    "express": "4.18.2",
+    "font-awesome": "4.7.0",
+    "normalize.css": "8.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "8.2.2",
+    "copyfiles": "2.4.1",
+    "css-loader": "6.9.0",
+    "html-webpack-plugin": "5.5.4",
+    "http-server": "14.1.1",
+    "mini-css-extract-plugin": "2.7.6",
+    "nodemon": "3.0.2",
+    "rimraf": "5.0.5",
+    "sass": "1.69.7",
+    "sass-loader": "13.3.3",
+    "webpack": "5.89.0",
+    "webpack-bundle-analyzer": "4.10.1",
+    "webpack-cli": "5.1.4",
+    "webpack-dev-server": "4.15.1"
+  },
+  "keywords": [
+    "js"
+  ]
+}

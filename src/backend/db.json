@@ -1,0 +1,47 @@
+{
+    "books": [{
+        "id": 1,
+        "message": "Hello!"
+    }, {
+        "id": 2,
+        "message": "mama!"
+    }, {
+        "id": 3,
+        "message": "myla!"
+    }, {
+        "id": 4,
+        "message": "ramu!"
+    }, {
+        "id": 5,
+        "message": "ramu!"
+    }],
+
+    "departments": [
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "Petrov"
+        },
+        {
+            "id": 2,
+            "name": "Efremov"
+        }
+    ],
+    "phones": [
+        {
+            "id": 1,
+            "phone": "+373564654646"
+        },
+        {
+            "id": 2,
+            "phone": "+15684658464"
+        }
+    ],
+    "computers": [
+        {
+            "id": 2,
+            "hasComputer": true
+        }
+    ]
+}

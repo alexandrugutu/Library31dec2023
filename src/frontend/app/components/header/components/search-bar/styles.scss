@@ -1,0 +1,19 @@
+/*
+.search-bar,
+.search-bar button,
+.search-bar input,
+.search-bar button i {
+    padding: 0;
+    margin: 0;
+}
+*/
+
+.search-bar {
+    &
+    button,
+    input,
+    button i {
+        padding: 0;
+        margin: 0;    
+    } 
+}

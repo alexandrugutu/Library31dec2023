@@ -1,0 +1,20 @@
+
+*:not(body):not(html) {
+    border: 1px dashed grey;
+    margin: 10px;
+    padding: 10px;
+}
+
+html>div {
+    display: none;
+}
+
+app-content {
+    display: none;
+}
+
+/*just testing - can be deleted */
+.sidebar {
+    float: left;
+    margin-left: pow(4, 3) * 1px;
+}

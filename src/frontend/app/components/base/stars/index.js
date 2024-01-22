@@ -1,0 +1,3 @@
+export { Stars } from './component';
+
+

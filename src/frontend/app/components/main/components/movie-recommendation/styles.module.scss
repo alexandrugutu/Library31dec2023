@@ -1,0 +1,19 @@
+.movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.label{
+        color: blue;
+}
+
+.title {
+        color: rgb(35, 118, 233);
+}
+
+.poster {
+    width: 200px;
+    height: 200px;
+}
