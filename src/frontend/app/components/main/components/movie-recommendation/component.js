@@ -1,37 +1,42 @@
 import { Stars } from "./../../../base/stars";
 import styles from './styles.module.scss';
 
-export function MovieRecommendation({title, genre, quality, translation, stars, imageUrl} = {
-    title: 'Cleaning',
-    genre: 'carpets and upholstery',
-    quality: 'HQ heigh quality',
-    translation: 'prof',
-    stars: 4,
-    imageUrl: "https://www.cisteniburian.cz/images/content/cisteni_kobercu/prirodni_baze/procherm-carpet-cleaner.png"
+export function MovieRecommendation({
+    id,
+    title, 
+    genres, 
+    overview, 
+    releaseDate, 
+    stars, 
+    poster
 }) {
-    const movieEl = document.createElement('div');
-
-    movieEl.classList.add('card');
-
+    const card = document.createElement('div');
     const imgEl = document.createElement('img');
-    imgEl.classList.add(styles.poster);
-    imgEl.src = imageUrl;
-
-    const titleEl = document.createElement('h4');
+    const cardBody =document.createElement('div');
+    const cardTitle = document.createElement('h5');
     const genreEl = document.createElement('h5');
-    const qualityEl = document.createElement('span');
-    const translationEl = document.createElement('span');
+    const cardText = document.createElement('p');
+    const cardBtn = document.createElement('button', 'btn-primary', styles.btnOpenMovie);
+    
+    card.classList.add('card', styles.MovieRecommendation);
+    imgEl.classList.add('card-img-top');
+    cardBody.classList.add('card-body', styles.description);
+    cardTitle.classList.add('card-title');
+    cardText.classList.add('card-text');
+    cardBtn.classList.add('btn', 'btn-primary');
 
-    titleEl.classList.add(styles.title);
-    qualityEl.classList.add(styles.label);
-    translationEl.classList.add(styles.label);
+    imgEl.src = poster;
+    cardBtn.setAttribute('data-id', id);
+    cardBtn.textContent= 'Go to movie';
+    
+    cardTitle.textContent = title;
+    genreEl.textContent = genres.join();
+    cardText.textContent = overview;
+    
+    cardBody.append(Stars(stars),cardTitle, cardText, cardBtn);
+    card.append(imgEl, cardBody);
 
-    titleEl.textContent = title;
-    genreEl.textContent = genre;
-    qualityEl.textContent = quality;
-    translationEl.textContent = translation;
-
-    movieEl.append(imgEl, titleEl, genreEl, Stars(stars), qualityEl, translationEl);
-
-    return movieEl;
+    return card;
 }
+
+//cardBody.classList.add('card-body');

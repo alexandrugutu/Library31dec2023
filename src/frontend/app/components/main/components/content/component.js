@@ -22,12 +22,13 @@ export function Content(){
         movies.forEach((movie) => {
             
                 fr.append( MovieRecommendation({
+                    id: movie.id,
                     title: movie.title,
-                    genre: movie.genres.join(),
-                    quality: new Date(movie.release_date).getFullYear(),
+                    genres: movie.genres,
+                    releaseDate: new Date(movie.release_date).getFullYear(),
                     stars: randomIntFromInterval(0, 5),
-                    translation: movie.overview,
-                    imageUrl: movie.poster
+                    overview: movie.overview,
+                    poster: movie.poster
                 }));
             
             

@@ -9,7 +9,7 @@ function getMovies(req, res) {
     } else {
         setTimeout(function() { 
             res.json(db.movies.slice(25 * (page -1 ), 25 * page)); 
-        }, 1500);
+        }, 100);
     }
 }
 

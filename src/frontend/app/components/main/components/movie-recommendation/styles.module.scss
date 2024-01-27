@@ -1,8 +1,12 @@
-.movie {
+.movie-recommendation{
+    color: black;
+}
+
+.description{
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;
 }
 
 .label{
@@ -15,5 +19,19 @@
 
 .poster {
     width: 200px;
-    height: 200px;
+    height: 300px;
 }
+
+.btn-open-movie{
+    align-self: stretch;
+}
+
+/*
+.movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    grid-auto-rows: 300px;
+    }
+*/
